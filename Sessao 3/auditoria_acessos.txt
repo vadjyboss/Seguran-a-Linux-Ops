@@ -1,0 +1,13 @@
+=== AUDITORIA DE ACESSOS — SESSÃO 3 ===
+Data: Fri Jul  3 20:22:14 -01 2026
+--- UTILIZADORES ---
+alice:x:1001:1001::/home/alice:/bin/bash
+bob:x:1002:1002::/home/bob:/bin/bash
+--- GRUPOS ---
+alice : alice seguranca
+bob : bob
+--- PERMISSÕES DIRECTÓRIO CONFIDENCIAL ---
+total 12
+drwxr-xr-x  3 root root      4096 Jul  3 20:12 .
+drwxr-xr-x 19 root root      4096 Jul  3 20:02 ..
+drwxr-x---  2 root seguranca 4096 Jul  3 20:13 confidencial
