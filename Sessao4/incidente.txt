@@ -1,0 +1,24 @@
+=== RELATÓRIO DE INCIDENTE — SESSÃO 4 ===
+Data: Fri Jul  3 20:49:47 -01 2026
+Analista: fraderson
+
+--- DIAGNÓSTICO: PROCESSOS ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+fraders+    1557 99.9  0.0   4948  3560 pts/0    R    20:30  19:25 bash -c while true; do :; done
+root         170  0.1  0.1 454144 12332 ?        Ssl  20:02   0:02 snapfuse /var/lib/snapd/snaps/snapd_26865.snap /snap/snapd/26865 -o ro,nodev,allow_other,suid
+root           1  0.0  0.1  24448 15488 ?        Ss   20:02   0:02 /sbin/init
+root          88  0.0  0.1  35692 12644 ?        Ss   20:02   0:01 /usr/lib/systemd/systemd-udevd
+root         212  0.0  0.4 2368504 39364 ?       Ssl  20:02   0:01 /snap/snapd/current/usr/lib/snapd/snapd
+root         209  0.0  0.3  44096 29584 ?        Ss   20:02   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         266  0.0  0.4 123460 32696 ?        Ssl  20:02   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root          52  0.0  0.3  83184 24252 ?        S<s  20:02   0:00 /usr/lib/systemd/systemd-journald
+root           8  0.0  0.0   3228  2156 hvc0     Sl+  20:02   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+--- ACÇÕES TOMADAS ---
+1. Processo identificado: PID=____ Comando=____
+2. SIGTERM enviado: kill PID → ignorado pelo processo
+3. SIGKILL enviado: kill -9 PID → processo terminado
+--- LOGS DE AUTENTICAÇÃO ---
+2026-07-03T20:19:01.342952-01:00 MSI-GAMER su[1228]: pam_systemd(su:session): Failed to check if /run/user/1001/bus exists, ignoring: Permission denied
+2026-07-03T20:20:18.157955-01:00 MSI-GAMER su[1298]: pam_systemd(su:session): Failed to check if /run/user/1002/bus exists, ignoring: Permission denied
+2026-07-03T20:43:09.390634-01:00 MSI-GAMER sudo: fraderson : TTY=/dev/pts/3 ; PWD=/home/fraderson ; USER=root ; COMMAND=/usr/bin/grep Failed\\|Invalid\\|FAILED /var/log/auth.log
+2026-07-03T20:43:21.962957-01:00 MSI-GAMER sudo: fraderson : TTY=/dev/pts/3 ; PWD=/home/fraderson ; USER=root ; COMMAND=/usr/bin/grep Failed\\|Invalid /var/log/auth.log
